@@ -117,9 +117,11 @@ public class InsertionRetrievalWithSqlDate extends ConnectionWithMysql {
 			
 			System.out.println("name\t\taddress\t\tgender\t\tdob\t\t\tdoj\t\t\tdom");
 			
+			SimpleDateFormat resultsdf = new SimpleDateFormat("dd-MM-YYYY");
+			
 			System.out.println(resultSet.getString(1)+ "\t\t" + resultSet.getString(2)+ "\t\t" +resultSet.getString(3)+ "\t\t" 
 					
-					+ resultSet.getDate(4)+ "\t\t" + resultSet.getDate(5)+ "\t\t"+ resultSet.getDate(6));
+					+ resultsdf.format( resultSet.getDate(4))+ "\t\t" + resultsdf.format( resultSet.getDate(5))+ "\t\t"+ resultsdf.format( resultSet.getDate(6)));
 		}
 		
 		}
